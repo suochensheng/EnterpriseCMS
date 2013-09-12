@@ -1,0 +1,14 @@
+使用方法：
+
+1.引用样式文件css/styles.css
+
+2.引用jquery的库文件js/jquery.js
+
+3.引用效果的具体js代码文件js/s3Slider.js复制至html文件中。
+
+4.在head头部调用s3Slider效果
+
+5.多张图片，请复制li区块
+
+
+*更多代码请访问：懒人图库 www.lanrentuku.com/js/

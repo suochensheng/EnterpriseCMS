@@ -1,0 +1,51 @@
+﻿
+@model Cargo.App_DataClass.HomeImageSlider
+           
+<link href="@Url.Content("~/Content/wowslider/engine1/style.css")" rel="stylesheet" type="text/css" />
+<div id="wowslider-container1">
+    <div class="ws_images">
+        <ul>
+        @foreach (var im in Model.Images)
+        {
+            <li><a href="#">
+                <img src="@Url.Content(im.UrlContent)" alt="@im.Title" title="@im.Title" id="@im.Id" />
+                </a>@im.Description
+            </li>
+        }
+            @*<li><a href="#">
+                <img src="@Url.Content("~/Content/wowslider/data1/images/1.jpg")" alt="1" title="1" id="wows1_0" /></a>description 1</li>
+            <li><a href="#">
+                <img src="@Url.Content("~/Content/wowslider/data1/images/2.jpg")" alt="2" title="2" id="wows1_1" /></a>description 2</li>
+            <li><a href="#">
+                <img src="@Url.Content("~/Content/wowslider/data1/images/3.jpg")" alt="3" title="3" id="wows1_2" /></a>description 3</li>
+            <li><a href="#">
+                <img src="@Url.Content("~/Content/wowslider/data1/images/4.jpg")" alt="4" title="4" id="wows1_3" /></a>description 4</li>
+            <li><a href="#">
+                <img src="@Url.Content("~/Content/wowslider/data1/images/5.jpg")" alt="5" title="5" id="wows1_4" /></a>description 5</li>*@
+        </ul>
+    </div>
+    <div class="ws_bullets">
+        <div>
+        @foreach (var im in Model.Images)
+        {
+            <a href="#" title="@im.Title">
+                <img src="@Url.Content(@im.TooltipsUrlContent)" alt="@im.Title" />@im.Title</a> 
+        }
+           @* <a href="#" title="1">
+                <img src="@Url.Content("~/Content/wowslider/data1/tooltips/1.jpg")" alt="1" />1</a>
+            <a href="#" title="2">
+                <img src="@Url.Content("~/Content/wowslider/data1/tooltips/2.jpg")" alt="2" />2</a>
+            <a href="#" title="3">
+                <img src="@Url.Content("~/Content/wowslider/data1/tooltips/3.jpg")" alt="3" />3</a>
+            <a href="#" title="4">
+                <img src="@Url.Content("~/Content/wowslider/data1/tooltips/4.jpg")" alt="4" />4</a>
+            <a href="#" title="5">
+                <img src="@Url.Content("~/Content/wowslider/data1/tooltips/5.jpg")" alt="5" />5</a>*@
+        </div>
+    </div>
+    <span class="wsl"><a href="#">cssuo</a> by cssuo</span>
+    <div class="ws_shadow"></div>
+</div>
+<script src="@Url.Content("~/Content/wowslider/engine1/wowslider.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Content/wowslider/engine1/script.js")" type="text/javascript"></script>
+

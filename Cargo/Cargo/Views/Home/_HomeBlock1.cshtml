@@ -1,0 +1,59 @@
+﻿@model Cargo.App_DataClass.HomeBloks1
+
+<div class="row" style="margin-left:100px;">
+    <div class="column_container">
+        <div class="wpb_wrapper">
+            <div class="row-fluid">
+                <div class="wpb_content_element wpb_single_image span12">
+                    <div class="wpb_wrapper">
+                        <img alt="" width="335" height="367" src="@Url.Content("~/Images/director.png")"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column_container">
+        @foreach (var item in Model.Bloks)
+        {
+            <div class="row-fluid" style="margin-top: 20px;">
+                <div style="float: left; display: block; width: 10%;">
+                    <img width="32" height="32" src="@Url.Content("~/Images/check.png")" alt="right" title="settings" class="icon_post" />
+                </div>
+                <div style="float:left; display:block; width:85%;" >
+                    <span>@item.Title</span>
+                        <h2><a>@item.ShortDesc</a></h2>
+                       @item.Description
+                </div>
+            </div>
+        }
+    </div>
+    <div class="column_container">
+    
+            <div class="tile mini">
+                <a href="@Url.Action("TransportLines","Service", new { Area=""})" style="background-size: cover; background-image: url(@Url.Content("~/Images/transportationline.jpg"));">
+                    <div style="font-weight:bold;color:black;">货运线路</div>
+                </a>
+                @*<div class="icon big_icon_center">
+                    <img alt="" src="@Url.Content("~/Images/transportationline.jpg")"/>
+                </div>*@
+                
+            </div>
+            <div class="tile mini" style="background-color:#ffa531;">
+                <a href="@Url.Action("About","Home", new { Area=""})"></a>
+                <div style="font-weight:bold;color:black;">公司信息 简洁</div>
+            </div>
+            <div class="tile mini">
+                <a href="@Url.Action("Index","Transport", new { Area=""})" style="background-size: cover; background-image: url(@Url.Content("~/Images/transportationcapability.png"));" >
+                    <div  style="font-weight:bold;color:black;">运力展示</div>
+                </a>
+         
+            </div>
+            <div class="tile mini">
+
+                    <a href="#" style="background-size: cover; background-image: url(@Url.Content("~/Images/reject.png"));">
+                    <div style="font-weight:bold;color:black;">拒绝运输事项</div>
+                </a>
+            </div>
+      
+    </div>
+</div>

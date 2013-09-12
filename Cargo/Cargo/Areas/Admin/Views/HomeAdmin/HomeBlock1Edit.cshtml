@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "HomeBlock1Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model Cargo.App_DataClass.HomeBloks1
+<div class="section-header">
+    <div class="title">
+        <img alt="" src="@Url.Content("~/Images/admin/ico-system.png")" />
+        Home Block 1
+    </div>
+</div>
+@using (Html.BeginForm("HomeBlock1EditSubmit", "HomeAdmin", new { Area = "Admin" }, FormMethod.Post))
+{
+    for (int i = 0; i < Model.Bloks.Count; i++)
+    {
+         <div class="label">Title</div>
+         @Html.TextBoxFor(e => e.Bloks[i].Title)
+
+         <div class="clear"></div>
+        
+        <div class="label">ShortDesc</div>
+         @Html.TextBoxFor(e => e.Bloks[i].ShortDesc)
+
+         <div class="clear"></div>
+         <div class="label">Description</div>
+         @Html.TextAreaFor(e => e.Bloks[i].Description, new { rows = "5", cols = "50" })
+
+         <div class="clear"></div>
+    }
+
+    <p>
+        <input type="submit" class="adminButtonBlue" name="Submit" id="Submit" value="Submit" />
+    </p>   
+}

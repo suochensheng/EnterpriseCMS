@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row-fluid firstrow">
+
+    @Html.Action("RenderHomeImageSlider", "Home", new { Area = "" })
+    @Html.Action("RenderHomeBlock2", "Home", new { Area = "" })
+
+</div>
+
+<div class="clear-fix"></div>
+
+<div class="secondrow">
+   @* @Html.Partial("_HomeBlock1")*@
+     @Html.Action("RenderHomeBlock1", "Home", new { Area = "" })
+</div>
+
+
+<div class="clear-fix"></div>
+
+
+
+

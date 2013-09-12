@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<style type="text/css">
+    .errorpage
+    {
+        background: url("../../Images/error.jpg") repeat scroll 0 0 transparent;
+        height: 325px;
+        width: 600px;
+        float:left;
+    }
+</style>
+<div class="secondrow" style="padding: 0px;">
+    <div class="errorpage">
+       
+    </div>
+    <div style="float:left;">
+         <p>未知错误</p>
+        <a href="@Url.Action("Home", "Index")">返回首页</a>
+    </div>
+</div>

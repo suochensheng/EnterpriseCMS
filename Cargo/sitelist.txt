@@ -1,0 +1,6 @@
+http://localhost:52138/Admin/HomeAdmin
+
+
+admin@yourstore.com
+111111
+

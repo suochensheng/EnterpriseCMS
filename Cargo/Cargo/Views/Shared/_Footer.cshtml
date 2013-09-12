@@ -1,0 +1,61 @@
+﻿@model Cargo.App_DataClass.ContactInfo
+
+<div class="clear-fix"></div>
+
+
+<div class="dark" style="padding-bottom: 30px; padding-left:50px;">
+
+    <div class="row-fluid">
+        <div class="column_container">
+          
+               @* <img alt="OneTouch" style="margin: 5px;" src="http://theme.crumina.net/onetouch/wp-content/uploads/2012/12/logo-footer.png"></a>*@
+                 <div style="float:left; margin-top:100px; color:white; font-weight:bolder;">@Resources.SitePublic.CompanyName</div>
+                <img alt="WanTong" style="margin-top:10px;" src="@Url.Content("~/Images/logo.png")"/>
+        </div>
+
+        <div class="column_container">
+            <section class="widget widget_info" style="margin-top: 20px;">
+                <div class="info-widget">
+                    <div class="subtitle">品质卓越</div>
+                    <h3>关于我们</h3>
+
+                    <p>我们拥有优秀的团队，提供优质的服务，过程高效安全，强大的实力为你提供强大的支撑！</p>
+
+                </div>
+            </section>
+        </div>
+
+        <div class="column_container">
+            <section class="adress-icon" style="margin-top: 20px;">
+                <div>
+                
+                    <img alt="adress-icon" src="@Url.Content("~/Images/map_w.png")"/>
+                </div>
+
+                
+                <p>
+                    地址: &nbsp; @Model.CompanyAddress
+                    <br/>
+                    电话: &nbsp; @Model.CompanyPhone
+                </p>
+            </section>
+
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="column_container">
+        </div>
+
+        <div class="column_container">
+            <section class="widget widget_info">
+                <p>
+                    <a target="_blank" href="http://www.baidu.com">BaiDu</a>
+                    <a target="_blank" href="http://www.bing.com.cn">Bing</a>
+                </p>
+            </section>
+        </div>
+
+        <div class="column_container">
+        </div>
+    </div>
+</div>

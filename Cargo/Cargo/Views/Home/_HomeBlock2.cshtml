@@ -1,0 +1,97 @@
+﻿@model Cargo.App_DataClass.HomeBloks2
+           
+<div class="home_center_content">
+    <div id="tab" class="box1" style="display: none;">
+        <div class="center_text">
+            <div class="big_title">@Model.NewsTitle <span>!</span></div>
+            <p>@Model.NewsDescription</p>
+
+        </div>
+
+    </div>
+
+    <div id="tab1" class="box1" style="display: block;">
+        <div class="center_text">
+            <div class="big_title">@Model.NewsTitle <span>!</span></div>
+            <p>@Model.NewsDescription</p>
+        </div>
+
+
+    </div>
+
+    <div id="tab2" class="box1" style="display: none;">
+        <div class="center_text">
+            <div class="big_title">@Model.WorkTitle <span>!</span></div>
+            <p>@Model.WorkDescription</p>
+        </div>
+
+
+    </div>
+
+    <div id="tab3" class="box1" style="display: none;">
+        <div class="center_text">
+            <div class="big_title">@Model.TeamTitle<span>!</span></div>
+            <p>@Model.TeamDescription</p>
+        </div>
+
+    </div>
+
+    <ul class="center_button_icons tabset">
+
+        <li id="icon1">
+            <a class="tab" href="#tab1">
+                <img border="0" title="" alt="image" src="@Url.Content("~/Images/icon_news.gif")"/>
+            </a>
+        </li>
+
+        <li id="icon2">
+            <a class="tab" href="#tab2">
+                <img border="0" title="" alt="image" src="@Url.Content("~/Images/icon_work.gif")"/>
+            </a>
+        </li>
+
+        <li id="icon3">
+            <a class="tab" href="#tab3">
+                <img border="0" title="" alt="image" src="@Url.Content("~/Images/icon_team.gif")"/>
+            </a>
+        </li>
+
+        <li>
+            <a class="tab active" href="#tab"></a>
+        </li>
+    </ul>
+</div>
+
+
+<script type="text/javascript">
+
+
+    function hideall() {
+        $("#tab").hide();
+        $("#tab1").hide();
+        $("#tab2").hide();
+        $("#tab3").hide();
+        $("#tab4").hide();
+    }
+    $(document).ready(function () {
+
+        $("#icon1").mouseover(function () {
+            hideall();
+            $("#tab1").css("display", "block");
+        });
+
+        $("#icon2").mouseover(function () {
+            hideall();
+            $("#tab2").css("display", "block");
+        });
+
+        $("#icon3").mouseover(function () {
+            hideall();
+            $("#tab3").css("display", "block");
+        });
+
+        hideall();
+        $("#tab").show();
+
+    });
+</script>

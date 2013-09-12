@@ -1,0 +1,102 @@
+﻿
+@{
+   
+    Layout = "~/Views/Shared/_EmptyLayoutClear.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style type="text/css">
+body, html{width: 100%;height: 100%;overflow: hidden;margin:0;}
+#allmap {height: 100%;overflow: hidden;}
+
+dl,dt,dd,ul,li{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+dt{
+    font-size:14px;
+    font-family:"微软雅黑";
+    font-weight:bold;
+    border-bottom:1px dotted #000;
+    padding:5px 0 5px 5px;
+    margin:5px 0;
+}
+dd{
+    padding:5px 0 0 5px;
+}
+li{
+    line-height:28px;
+}
+</style>
+<script src="@Url.Content("~/Scripts/jquery-1.8.2.min.js")" type="text/javascript"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=BCb6b23882366b73ffe9b7abc37e02e8"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+
+<title>Location</title>
+</head>
+<body style="background-color:transparent;">
+
+<div id="allmap" style="overflow:hidden;zoom:1;position:relative;">	
+    <div id="map" style="height: 100%; transition: all 0.5s ease-in-out 0s; overflow: hidden; 
+        position: relative; text-align: left;"></div>
+   
+   
+        <div id="searchresult" style="position:absolute;"></div>
+   
+</div>
+
+<script type="text/javascript">
+    //http://lbsyun.baidu.com/apiconsole/key
+    //http://developer.baidu.com/map/library.htm
+    //地址：天津市南开区复康路134号	中国工商银行金厦支行
+    //坐标查询:http://api.map.baidu.com/lbsapi/getpoint/index.html
+    //电话：(022)23667536	
+    //坐标：117.145309,39.105016
+    var map = new BMap.Map('map');
+    var poi = new BMap.Point(117.729479, 39.010755);
+    map.centerAndZoom(poi, 15);
+    map.enableScrollWheelZoom();
+
+    var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+                    '<img src="@Url.Content("~/Images/map/logo.png")" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
+                    '地址：天津市塘沽区尚海园1-1601<br/>电话：(022)59847196  <br/>简介：天津市滨海新区临港路附近，距离新港公园不远。' +
+                  '</div>';
+
+    //创建检索信息窗口对象
+    var searchInfoWindow = null;
+	searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+			title  : "天津博贸",      //标题
+			width  : 200,             //宽度
+			height : 100,              //高度
+			panel: "searchresult",         //检索结果面板
+			enableAutoPan : true,     //自动平移
+			searchTypes   :[
+				BMAPLIB_TAB_SEARCH,   //周边检索
+				BMAPLIB_TAB_TO_HERE,  //到这里去
+				BMAPLIB_TAB_FROM_HERE //从这里出发
+			]
+		});
+    var marker = new BMap.Marker(poi); //创建marker对象
+    marker.enableDragging(); //marker可拖拽
+    marker.addEventListener("click", function(e){
+        searchInfoWindow.open(marker);
+        $(".BMapLib_SearchInfoWindow").width(350);
+    })
+    map.addOverlay(marker); //在地图中添加marker
+    searchInfoWindow.open(marker); //在marker上打开检索信息串口
+
+    $(document).ready(function () {
+        $(".BMapLib_SearchInfoWindow").width(350);
+    });
+    
+</script>
+  
+    
+</body>
+</html>

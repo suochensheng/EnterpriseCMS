@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "NotFound";
+}
+
+<style type="text/css">
+    body
+    {
+        color: #333333;
+        font-family: Tahoma,Simsun;
+        font-size: 12px;
+    }
+
+    .div404
+    {
+        background: url("../../Images/404.jpg") repeat scroll 0 0 transparent;
+        height: 260px;
+        width: 510px;
+    }
+
+    .div404wording
+    {
+        padding: 90px 0px 0px 180px;
+        font-size: 14px;
+        line-height: 24px;
+    }
+</style>
+<div class="secondrow" style="padding:0px;" >
+<div class="div404">
+    <div class="div404wording">
+        <a href="@Url.Action("Home", "Index")">我找首页去...</a>
+    </div>
+</div>
+</div>

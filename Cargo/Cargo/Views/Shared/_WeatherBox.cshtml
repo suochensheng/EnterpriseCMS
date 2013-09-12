@@ -1,0 +1,51 @@
+﻿
+<!-- Start weather -->
+   <input type="text"  id="cityName" name="cityName" value="北京" />
+   <input type="button" class="button" style="width:80px" onclick="GetWeather();" value="天气" />
+<script type="text/javascript">
+    $(document).ready(function () {
+        var myArr = [];
+
+        $.ajax({
+            type: "GET",
+            url: "@Url.Content("~/App_DataClass/ChinaCityId.xml")", // change to full path of file on server
+            dataType: "xml",
+            success: parseXml,
+            complete: setupAC,
+            failure: function (data) {
+                alert("XML File could not be found");
+            }
+        });
+        function parseXml(xml) {
+            //find every query value
+            $(xml).find("Province").each(function () {
+                myArr.push($(this).attr("Name"));
+            });
+            $(xml).find("City").each(function () {
+                myArr.push($(this).attr("Name"));
+            });
+        }
+        function setupAC() {
+            $("input#cityName").autocomplete({
+                source: myArr,
+                minLength: 1,
+                select: function (event, ui) {
+                    $("input#cityName").val(ui.item.value);
+                    //alert("val value"); // $("#searchForm").submit();
+                }
+            });
+        }
+    });
+   
+    function GetWeather()
+    {
+        $.get("@Url.Action("GetWeather","Home")", { cityName: $("#cityName").val() }, function (data) {
+            $("#weatherinfodiv").empty();
+            $("#weatherinfodiv").html(data);
+        });
+    }
+</script>
+<div id="weatherinfodiv">
+@Html.Action("Weather", "Home")
+</div>
+<!-- End weather -->

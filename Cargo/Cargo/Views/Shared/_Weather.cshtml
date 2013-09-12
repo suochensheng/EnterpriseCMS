@@ -1,0 +1,48 @@
+﻿
+@model CFreedomGroupIntro.Models.Weather
+
+
+
+    <div class="witem">
+
+       
+           <h4>@Model.Weatherinfo.city</h4> 
+        
+        <p class="witem_3">
+            穿衣指数: @Model.Weatherinfo.index
+        </p>
+        <p class="witem_3">@Model.Weatherinfo.index_d</p>
+
+        <p class="witem_3">洗车指数: @Model.Weatherinfo.index_xc</p>
+    </div>
+    <div class="witem">
+        <h4 class="witem_1">今天</h4>
+        <div class="witem_2">
+            <img style=" border: 0 none;vertical-align: middle;" title="@Model.Weatherinfo.img_title1" src="@Model.Weatherinfo.img1">
+            <img style=" border: 0 none;vertical-align: middle;" title="@Model.Weatherinfo.img_title2" src="@Model.Weatherinfo.img2">
+        </div>
+        <p class="witem_3"><span>@Model.Weatherinfo.temp1</span>℃</p>
+        <p class="witem_3">@Model.Weatherinfo.weather1</p>
+        <p class="witem_3">@Model.Weatherinfo.wind1</p>
+    </div>
+     <div class="witem">
+        <h4 class="witem_1">明天</h4>
+        <div class="witem_2">
+            <img style=" border: 0 none;vertical-align: middle;" title="@Model.Weatherinfo.img_title3" src="@Model.Weatherinfo.img3">
+            <img style=" border: 0 none;vertical-align: middle;" title="@Model.Weatherinfo.img_title4" src="@Model.Weatherinfo.img4">
+        </div>
+        <p class="witem_3"><span>@Model.Weatherinfo.temp2</span>℃</p>
+        <p class="witem_3">@Model.Weatherinfo.weather2</p>
+        <p class="witem_3">@Model.Weatherinfo.wind2</p>
+    </div>
+     <div class="witem">
+        <h4 class="witem_1">后天</h4>
+        <div class="witem_2">
+             <img style=" border: 0 none;vertical-align: middle;" title="@Model.Weatherinfo.img_title5" src="@Model.Weatherinfo.img5">
+            <img style=" border: 0 none;vertical-align: middle;" title="@Model.Weatherinfo.img_title6" src="@Model.Weatherinfo.img6">
+        </div>
+        <p class="witem_3"><span>@Model.Weatherinfo.temp3</span>℃</p>
+        <p class="witem_3">@Model.Weatherinfo.weather3</p>
+        <p class="witem_3">@Model.Weatherinfo.wind3</p>
+    </div>
+ 

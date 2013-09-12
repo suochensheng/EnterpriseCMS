@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Cargo.App_DataClass.ContactInfo
+<div class="clear-fix"></div>
+
+<div class="secondrow" style="padding-top:0px; padding-left:100px;padding-right:100px;">
+
+    <div class="team row" >
+
+        <div class="team-brick five columns">
+            <div class="bg">
+                <a href="#">
+                    <img alt="Georgia Frie, designer" src="@Url.Content("~/Images/designer.jpg")"/>
+                </a>
+                <div class="desc">
+                    <h4><a href="#">Georgia Frie, designer</a></h4>
+                    <p>sectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="team-brick five columns">
+            <div class="bg">
+                <a href="#">
+                    <img alt="Max Pain, developer" src="@Url.Content("~/Images/developer.jpg")"/>
+                </a>
+                <div class="desc">
+                    <h4><a href="#">Max Pain, developer</a></h4>
+                    <p>sectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="team-brick five columns">
+            <div class="bg">
+                <a href="#">
+                    <img alt="John Doe, director" src="@Url.Content("~/Images/director.jpg")"/>
+                </a>
+                <div class="desc">
+                    <h4><a href="#">John Doe, director</a></h4>
+                    <p>sectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="fifteen columns">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+             Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, 
+             ac euismod nisi. Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh.
+              Nullam nec diam risus. Donec laoreet ultricies rhoncus. Aliquam adipiscing,… </p>
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="fifteen columns">
+            <div id="map" style="position: relative;  float:left; width:100%; background-color: rgb(229, 227, 223); overflow: hidden;">
+                 <iframe style="height:100%;width:100%;" src="@Url.Action("BaiduMap","Home")">
+
+                </iframe>
+            </div>
+             
+
+        </div>
+
+        <div class="five columns" style="float:left; margin-left:10px;">
+          
+       <div class="phone">
+      <dl>
+        <dd>
+          <div><img src="@Url.Content("~/Content/chatonline/images/icon_phone.gif")" />
+            <h3 class="f-yh">电话咨询</h3>
+           </div>
+          <p>@Model.CompanyPhone</p>
+        </dd>
+        <dd>
+          <div><img src="@Url.Content("~/Content/chatonline/images/icon_consult.gif")" class="consult_img" />
+            <h3 class="f-yh">联系我们</h3>
+            <span>在线咨询</span></div>
+          <a href="http://wpa.qq.com/msgrd?v=3&uin=@Model.qq1&site=qq&menu=yes" class="online" target="_blank" ><q class="f-yh">在线服务</q></a>
+          <a href="http://wpa.qq.com/msgrd?v=3&uin=@Model.qq2&site=qq&menu=yes" class="online" target="_blank" ><q class="f-yh">售后咨询</q></a> </dd>
+      </dl>
+    </div>
+        
+        
+        </div>
+
+        <div class="ten columns">
+            
+                <div class="fields seven columns" style="float:left;">
+
+                    <label for="sender_name">姓名</label>
+                    <input type="text" id="sender_name" name="sender_name" class="text"/>
+
+                    <label for="sender_email">邮箱</label>
+                    <input type="text" class="text" name="sender_email" id="sender_email"/>
+
+                    <label>标题:</label>
+                    <input type="text" id="letter_subject" name="letter_subject" class="text"/>
+                </div>
+                <div style="float:left; margin-left:50px;">
+                <textarea class="eight columns" tabindex="4" style="height:150px; width:300px;" rows="10" cols="30" id="letter_text" name="letter_text"> </textarea>
+                <div class="clear"></div>
+                    <input type="button" value="Send message" tabindex="5" class="button right"/>
+                </div>
+           
+        </div>
+    </div>
+
+   <div class="clear-fix" style="height:10px;"></div>
+    </div>

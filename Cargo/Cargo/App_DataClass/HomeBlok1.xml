@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<HomeBlok1 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Bloks>
+    <Bloks Title="大件运输">
+      <ShortDesc>京津冀 区域</ShortDesc>
+      <Description>天津市西青区从新配货站主要承运各类大型、特种物件，以及承担工业搬场业务，拥有承运单件重量1800吨以内各载重吨级的大件运输平板车组和各种大吨位起重吊机，适应各种大型设备和物资的运输、吊装和就位要求。可承接超长、超宽 、超重,、超大型设备和机械的运输业务。以优惠的价格、优质的服务为客户服务，为厂方为运输单位牵线搭桥 ；以优质的服务谋求企业的发展； 以合理的价格应对市场竞争，是本企业发展之道。 </Description>
+    </Bloks>
+    <Bloks Title="长途搬家">
+      <ShortDesc>经营范围</ShortDesc>
+      <Description> 宾馆、商厦、大卖场和个人的中小件货物搬运 · 驻沪使领馆、在沪外国家庭的涉外特种搬场 · 居民搬场、小件快运、大都市配送 · 商务楼、企事业单位的大规模搬迁   </Description>
+    </Bloks>
+  </Bloks>
+</HomeBlok1>

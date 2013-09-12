@@ -1,0 +1,200 @@
+﻿@{
+    ViewBag.Title = "Strength";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model Cargo.App_DataClass.Strength
+<div class="section-header">
+    <div class="title">
+        <img alt="" src="@Url.Content("~/Images/admin/ico-content.png")" />
+        Strength
+    </div>
+</div>
+@using (Html.BeginForm("StrengthEditSubmit", "TransportAdmin", new { Area = "Admin" }, FormMethod.Post,
+    new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(e=>e.BlockImage_1)
+    @Html.HiddenFor(e => e.BlockImage_2)
+    @Html.HiddenFor(e => e.BlockImage_3)
+    @Html.HiddenFor(e => e.BlockImage_4)
+    @Html.HiddenFor(e => e.BlockImage_5)
+    @Html.HiddenFor(e => e.BlockImage_6)
+
+    <div class="label">
+            Description</div>
+     @Html.TextAreaFor(e => e.Description, new { rows = "5", cols = "50" })
+     <div class="clear" style="height:50px;">
+    </div>
+    <div style="float: left; display: block;border-right: 2px solid #C8C8C8; margin-right:50px;">
+        <div class="editor-label">
+            <img src="@Url.Content(Model.BlockImage_1)" alt="image" id="image1" />
+        </div>
+        <div class="editor-field">
+            <input id="fileupload_1" name="fileupload_1" type="file" />
+            <span style="font-weight: bold;">图片大小:720*240</span>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockText_1</div>
+        @Html.TextAreaFor(e => e.BlockText_1, new { rows = "5", cols = "30" })
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockTime_1</div>
+        @Html.TextBoxFor(e => e.BlockTime_1)
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockTitle_1</div>
+        @Html.TextBoxFor(e => e.BlockTitle_1)
+        <div class="clear">
+        </div>
+    </div>
+    
+    <div style="float: left; display: block;border-right: 2px solid #C8C8C8;margin-right:50px;">
+        <div class="editor-label">
+            <img src="@Url.Content(Model.BlockImage_2)" alt="image" id="image2" />
+        </div>
+        <div class="editor-field">
+            <input id="fileupload_2" name="fileupload_2" type="file" />
+            <span style="font-weight: bold;">图片大小:356*240</span>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockText_2</div>
+        @Html.TextAreaFor(e => e.BlockText_2, new { rows = "5", cols = "30" })
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockTime_2</div>
+        @Html.TextBoxFor(e => e.BlockTime_2)
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockTitle_2</div>
+        @Html.TextBoxFor(e => e.BlockTitle_2)
+        <div class="clear">
+        </div>
+    </div>
+    
+      <div class="clear" style="height:50px;">
+    </div>
+    
+    <div style="float: left; display: block;border-right: 2px solid #C8C8C8;margin-right:50px;">
+        <div class="editor-label">
+            <img src="@Url.Content(Model.BlockImage_3)" alt="image" id="image3" />
+        </div>
+        <div class="editor-field">
+            <input id="fileupload_3" name="fileupload_3" type="file" />
+            <span style="font-weight: bold;">图片大小:356*240</span>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockText_3</div>
+        @Html.TextAreaFor(e => e.BlockText_3, new { rows = "5", cols = "30" })
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockTime_3</div>
+        @Html.TextBoxFor(e => e.BlockTime_3)
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockTitle_3</div>
+        @Html.TextBoxFor(e => e.BlockTitle_3)
+        <div class="clear">
+        </div>
+    </div>
+    
+    <div style="float: left; display: block;border-right: 2px solid #C8C8C8;margin-right:50px;">
+        <div class="editor-label">
+            <img src="@Url.Content(Model.BlockImage_4)" alt="image" id="image4" />
+        </div>
+        <div class="editor-field">
+            <input id="fileupload_4" name="fileupload_4" type="file" />
+            <span style="font-weight: bold;">图片大小:356*240</span>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockText_4</div>
+        @Html.TextAreaFor(e => e.BlockText_4, new { rows = "5", cols = "30" })
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockTime_4</div>
+        @Html.TextBoxFor(e => e.BlockTime_4)
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockTitle_4</div>
+        @Html.TextBoxFor(e => e.BlockTitle_4)
+        <div class="clear">
+        </div>
+    </div>
+    
+      <div class="clear" style="height:50px;">
+    </div>
+    
+    <div style="float: left; display: block;border-right: 2px solid #C8C8C8;margin-right:50px;">
+        <div class="editor-label">
+            <img src="@Url.Content(Model.BlockImage_5)" alt="image" id="image5" />
+        </div>
+        <div class="editor-field">
+            <input id="fileupload_5" name="fileupload_5" type="file" />
+            <span style="font-weight: bold;">图片大小:356*240</span>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockText_5</div>
+        @Html.TextAreaFor(e => e.BlockText_5, new { rows = "5", cols = "30" })
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockTime_5</div>
+        @Html.TextBoxFor(e => e.BlockTime_5)
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockTitle_5</div>
+        @Html.TextBoxFor(e => e.BlockTitle_5)
+        <div class="clear">
+        </div>
+    </div>
+    
+    <div style="float: left; display: block;border-right: 2px solid #C8C8C8;margin-right:50px;">
+        <div class="editor-label">
+            <img src="@Url.Content(Model.BlockImage_6)" alt="image" id="image6" />
+        </div>
+        <div class="editor-field">
+            <input id="fileupload_6" name="fileupload_6" type="file" />
+            <span style="font-weight: bold;">图片大小:720*240</span>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockText_6</div>
+        @Html.TextAreaFor(e => e.BlockText_6, new { rows = "5", cols = "30" })
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockTime_6</div>
+        @Html.TextBoxFor(e => e.BlockTime_6)
+        <div class="clear">
+        </div>
+        <div class="label">
+            BlockTitle_6</div>
+        @Html.TextBoxFor(e => e.BlockTitle_6)
+        <div class="clear">
+        </div>
+    </div>
+    
+      <div class="clear">
+    </div>
+    <p>
+        <input type="submit" class="adminButtonBlue" name="Submit" id="Submit" value="Submit" />
+    </p>   
+}

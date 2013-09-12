@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>管理控制台</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/Content/telerik.common.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/telerik.vista.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/AdminSite.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.8.2.min.js")" type="text/javascript"></script>
+</head>
+<body>
+    <div>
+        <div class="header">
+            <div class="logo">
+            </div>
+            <div class="links">
+                @Html.ActionLink("FrontIndex", "Index", "Home", new { area = "" }, null)
+                <span class="separator">|</span>
+            </div>
+            <div class="login-info">
+            @if (!string.IsNullOrEmpty(ViewBag.UserName))
+            {
+                @String.Format("LoggedInAs {0}", ViewBag.UserName ?? "")
+                <text>, </text>
+                @Html.ActionLink("Logout", "Logout", "HomeAdmin", new { area = "Admin" }, null)
+            }
+            </div>
+            <div class="version">
+                <span>Cargo 1.0</span>
+            </div>
+        </div>
+        <div class="header-menu">
+            <ul id="AdminMenu" class="t-widget t-reset t-header t-menu">
+                <li class="t-item t-highlighted t-state-default">
+                <a href="#" class="t-link">
+                    <img src="@Url.Content("~/Images/admin/ico-system.png")" class="t-image" alt="image" />Home</a>
+                     <div class="t-animation-container" style="width: 115px; height: 128px; display: none;">
+                        <ul class="t-group" style="margin-top: -2px; width:113px; display:block;">
+                             <li class="t-item t-state-default">
+                            <a href="@Url.Action("HomeImageSliderEdit", "HomeAdmin", new { Area="Admin"})" class="t-link">
+                                HomeImageSlider</a></li>
+                            <li class="t-item">
+                            <a href="@Url.Action("HomeBlock2Edit", "HomeAdmin", new { Area = "Admin" })" class="t-link">
+                                HomeBlock2</a></li>
+                                 <li class="t-item">
+                            <a href="@Url.Action("HomeBlock1Edit", "HomeAdmin", new { Area = "Admin" })" class="t-link">
+                                HomeBlock1</a></li>
+                            
+                        </ul>
+                    </div>
+                </li>
+                <li class="t-item t-state-default">
+                    <span class="t-link">
+                    <img src="@Url.Content("~/Images/admin/ico-content.png")" class="t-image" alt="image" />Content<span
+                        class="t-icon t-arrow-down"></span></span>
+                    <div class="t-animation-container" style="width: 115px; height: 128px; display: none;">
+                        <ul class="t-group" style="margin-top: -2px; width:113px; display:block;">
+                             <li class="t-item t-state-default">
+                            <a href="@Url.Action("TransportLinesEdit", "TransportAdmin", new { Area = "Admin" })" class="t-link">
+                                TransportLines</a></li>
+                            <li class="t-item">
+                            <a href="@Url.Action("ContactEdit", "TransportAdmin", new { Area = "Admin" })" class="t-link">
+                                Contact Info</a></li>
+                               
+                        </ul>
+                    </div>
+                </li>
+                 <li class="t-item t-state-default">
+                    <span class="t-link">
+                    <img src="@Url.Content("~/Images/admin/ico-stat1.gif")" class="t-image" alt="image" />Strength<span
+                        class="t-icon t-arrow-down"></span></span>
+                    <div class="t-animation-container" style="width: 115px; height: 128px; display: none;">
+                        <ul class="t-group" style="margin-top: -2px; width:113px; display:block;">
+                                 <li class="t-item t-state-default">
+                            <a href="@Url.Action("StrengthEdit", "TransportAdmin", new { Area = "Admin" })" class="t-link">
+                                Strength</a></li>
+                            
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#AdminMenu li").hover(
+                        function () {
+//                            $(this).find(".t-link").addClass("t-state-hover");
+                            $(this).children(".t-animation-container").show();
+                        },
+                        function () {
+//                            $(this).find(".t-link").removeClass("t-state-hover");
+                            $(this).children(".t-animation-container").hide();
+                        }
+                        );
+                        $("#AdminMenu li .t-link").hover(
+                        function () {
+                            $(this).addClass("t-state-hover");
+                        },
+                        function () {
+                            $(this).removeClass("t-state-hover");
+                        }
+                        );
+                });
+            </script>
+        </div>
+        <div class="status-bar">
+                 @string.Format("{0:F}", DateTime.Now)
+        </div>
+        <div class="content">
+         @Html.Partial("_Notifications")
+                <div id="body" class="cph">
+                @RenderBody()
+                 </div>
+          
+        </div>
+
+    </div>
+</body>
+</html>

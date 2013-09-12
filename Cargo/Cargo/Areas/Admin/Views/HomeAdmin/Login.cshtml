@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_EmptyLayout.cshtml";
+}
+@model LoginModel
+@using Cargo.Models
+<h2>
+    Login</h2>
+<div class="form-fields" >
+    @using (Html.BeginForm("Login", "HomeAdmin", new { Area = "Admin" }, FormMethod.Post, new { Id = "loginForm" }))
+    {
+        @Html.HiddenFor(m => m.ReturnUrl)
+        @Html.HiddenFor(m => m.Id)
+        <div class="message-error">
+            @Html.ValidationSummary(true, "Login Unsuccessful")
+        </div>
+
+        <div class="inputs">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email, new { @class = "email", autofocus = "autofocus" })
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+
+        <div class="inputs">
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password, new { @class = "password" })
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+        <div class="inputs reversed">
+            @Html.CheckBoxFor(m => m.RememberMe, new { @class = "float-left" })
+            @Html.LabelFor(m => m.RememberMe)
+        </div>
+                       
+        
+            <input class="adminButtonBlue" type="submit" value="Login" />
+      
+                       
+    }
+</div>

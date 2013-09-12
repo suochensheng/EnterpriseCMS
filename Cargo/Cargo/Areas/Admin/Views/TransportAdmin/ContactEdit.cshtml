@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Contact Info";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model Cargo.App_DataClass.ContactInfo
+<div class="section-header">
+    <div class="title">
+        <img alt="" src="@Url.Content("~/Images/admin/ico-content.png")" />
+       Contact Info
+    </div>
+</div>
+@using (Html.BeginForm("ContactEditSubmit", "TransportAdmin", new { Area = "Admin" }, FormMethod.Post))
+{
+    <div class="label">CompanyName</div>
+    @Html.TextBoxFor(e => e.CompanyName)
+
+    <div class="clear"></div>
+
+    <div class="label">CompanyAddress</div>
+    @Html.TextAreaFor(e => e.CompanyAddress, new { rows="5" ,cols="50" })
+
+    <div class="clear"></div>
+
+    <div class="label">CompanyEmail</div>
+    @Html.TextBoxFor(e => e.CompanyEmail, new { @class = "" })
+
+     <div class="clear"></div>
+
+    <div class="label">CompanyPhone</div>
+    @Html.TextBoxFor(e => e.CompanyPhone)
+
+    <div class="clear"></div>
+
+    <div class="label">qq1</div>
+    @Html.TextBoxFor(e => e.qq1, new { @class = "" })
+
+    <div class="clear"></div>
+
+    <div class="label">qq2</div>
+    @Html.TextBoxFor(e => e.qq2)
+
+    <p>
+        <input type="submit" class="adminButtonBlue" name="Submit" id="Submit" value="Submit" />
+    </p>   
+}

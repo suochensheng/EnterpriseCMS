@@ -1,0 +1,111 @@
+﻿<nav id="topmenu" class="eleven columns">
+
+    <ul class="tiled-menu" id="menu-primary-navigation">
+        <li class="menu-item">
+            <span class="menu-item-wrap"><a style="background-color: #ffaa31; background-size: cover; background-image: url(@Url.Content("~/Images/headermenu/home.png"));" href="@Url.Action("Index","Home")"><span class="link-text">主页</span><span class="arrow">&nbsp;</span><span class="tile-icon"></span></a></span>
+        </li>
+        <li class="menu-item"><span class="menu-item-wrap"><a style="background-color: #2E2E2E; background-size: cover; background-image: url(@Url.Content("~/Images/headermenu/transportation.png"));" href="@Url.Action("Index","Transport", new { Area=""})"><span class="link-text">运输 </span><span class="arrow">&nbsp;</span><span class="tile-icon"></span></a></span>
+            <ul style="display: none;">
+                 <li><span class="menu-item-wrap">
+                    <a href="@Url.Action("Index","Transport", new { Area=""})" ><span class="link-text">运力展示</span></a>
+                    </span></li>
+                <li><span class="menu-item-wrap">
+                    <a href="#" onclick="largescaleload();"><span class="link-text">大件运输</span></a>
+                    </span></li>
+              
+                <li><span class="menu-item-wrap">
+                    <a href="#" onclick="ldtload();"><span class="link-text">长途搬运</span></a>
+                    </span></li>
+            </ul>
+        </li>
+        <li class="menu-item"><span class="menu-item-wrap"><a onclick="serviceProcessload();" style="background-color: #0B3B39; background-size: cover; background-image: url(@Url.Content("~/Images/headermenu/process.png"));" href="#"><span class="link-text">服务</span><span class="tile-icon"></span></a></span>
+            <ul style="display: none;">
+                 <li><span class="menu-item-wrap">
+                    <a href="@Url.Action("Index", "Order", new { Area="Order"})" ><span class="link-text">订单系统</span></a>
+                    </span></li>
+                    <li><span class="menu-item-wrap">
+                    <a href="@Url.Action("Index", "Order", new { Area = "Order" })" ><span class="link-text">车源信息</span></a>
+                    </span></li>
+            </ul>
+        </li>
+        <li class="menu-item"><span class="menu-item-wrap"><a  style="background-color: #6cbe42; background-size: cover; background-image: url(@Url.Content("~/Images/headermenu/customer.png"));" href="@Url.Action("TransportLines","Service", new { Area=""})"><span class="link-text">运输线路</span><span  class="tile-icon"></span></a></span></li>
+
+        <li class="menu-item"><span class="menu-item-wrap"><a style="background-color: #57bae8; background-size: cover; background-image: url(@Url.Content("~/Images/headermenu/contact.jpg"));" href="@Url.Action("Contact","Home", new { Area=""})"><span class="link-text">联系我们</span><span  class="tile-icon"></span></a></span></li>
+        <li class="menu-item"><span class="menu-item-wrap">
+            <a style="background-color: #ffaa31; background-size: cover; background-image: none;" href="@Url.Action("About","Home", new { Area=""})">
+                <img alt="" class="contact-menu-icons contact-icon-1" src="@Url.Content("~/Images/headermenu/about1.jpg")"><img alt="" class="contact-menu-icons contact-icon-2" src="@Url.Content("~/Images/headermenu/about2.jpg")"/><img alt="" class="contact-menu-icons contact-icon-3" src="@Url.Content("~/Images/headermenu/about3.jpg")"/>
+                <span class="link-text">关于我们</span><span class="tile-icon"></span>
+            </a></span></li>
+    </ul>
+</nav>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#topmenu ul li").hover(
+            function () {
+                $(this).children("ul").show();
+            },
+            function () {
+                $(this).children("ul").hide();
+            }
+            );
+    });
+    function largescaleload()
+    {
+        $.ajax({
+            //data: {
+            //    "p1": "xxx",
+            //    "p2": "xxx",
+            //},
+            type: "POST",
+            traditional: true,
+            url: '@Url.Action("BargeScale","Transport", new { Area=""})',
+            success: function (r) {
+                $("#body").html(r);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(thrownError);
+            }
+        });
+    }
+
+    function strengthload() {
+        $.ajax({
+            type: "POST",
+            traditional: true,
+            url: '@Url.Action("Strength","Transport", new { Area=""})',
+            success: function (r) {
+                $("#body").html(r);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(thrownError);
+            }
+        });
+    }
+    function ldtload() {
+        $.ajax({
+            type: "POST",
+            traditional: true,
+            url: '@Url.Action("LDT","Transport", new { Area=""})',
+            success: function (r) {
+                $("#body").html(r);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(thrownError);
+            }
+        });
+    }
+    function serviceProcessload() {
+        $.ajax({
+            type: "POST",
+            traditional: true,
+            url: '@Url.Action("Process","Service", new { Area=""})',
+            success: function (r) {
+                $("#body").html(r);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert(thrownError);
+            }
+        });
+    }
+</script>

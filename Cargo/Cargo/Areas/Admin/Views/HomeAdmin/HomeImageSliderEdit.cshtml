@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "HomeImageSlider";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model Cargo.App_DataClass.HomeImageSlider
+           
+
+<div class="section-header">
+        <div class="title">
+            <img alt="" src="@Url.Content("~/Images/admin/ico-system.png")" />
+            Home Image Slider
+        </div>
+       
+    </div>
+
+@using (Html.BeginForm("HomeImageSliderEditSubmit", "HomeAdmin", new { Area = "Admin" }, FormMethod.Post,
+    new { enctype = "multipart/form-data" }))
+{
+
+    for (int i = 0; i < Model.Images.Count; i++)
+    {
+    <div>
+        <fieldset>
+            @Html.HiddenFor(m => m.Images[i].Id)
+            @Html.HiddenFor(m => m.Images[i].Alt)
+            @Html.HiddenFor(m => m.Images[i].UrlContent)
+            @Html.HiddenFor(m => m.Images[i].TooltipsUrlContent)
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Images[i].Title)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.Images[i].Title, new { @class = "adminInput" })
+                @Html.ValidationMessageFor(m => m.Images[i].Title)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Images[i].Description)
+            </div>
+            <div class="editor-field">
+                @Html.TextAreaFor(m => m.Images[i].Description, new { @class = "adminInputNoWidth" })
+                @Html.ValidationMessageFor(m => m.Images[i].Description)
+            </div>
+
+            <div class="editor-label">
+               <img src="@Url.Content(Model.Images[i].UrlContent)" alt="@Model.Images[i].Title" title="@Model.Images[i].Title" id="@Model.Images[i].Id" />
+            </div>
+            <div class="editor-field">
+                <input id="@string.Format("fileupload_{0}", Model.Images[i].Id)" name="@string.Format("fileupload_{0}", Model.Images[i].Id)" type="file" />
+               <span style="font-weight:bold;">图片大小:1000*400</span> 
+            </div>
+            
+        </fieldset>
+    </div>
+    }
+    <p>
+     
+         <input type="submit" class="adminButtonBlue" name="Submit" id="Submit" value="Submit" /> 
+
+            </p>
+     
+}

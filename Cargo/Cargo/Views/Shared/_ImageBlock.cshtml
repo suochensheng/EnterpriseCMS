@@ -1,0 +1,167 @@
+﻿@*<div class="wrap" style="padding-left:30px; padding-right:10px;">
+
+    <div class="grid">
+        <div class="gr-box">
+            <div class="item large 1 1 odd">
+                <img alt="大货件 集装箱" style="margin: 0 0;" src="@Url.Content("~/images/strength/block1.jpg")" />
+                <div class="description disp">
+                    <time>December 6, 2012 10:29 am</time>
+                    <h4>大货件 集装箱</h4>
+                    <br />
+                    <p>我们在这里进行安全高速高效的集装箱运输 </p>
+
+                </div>
+                <a href="#"></a>
+            </div>
+
+            <div class="item half even">
+                <img alt="大货件 集装箱" style="margin: 0 0;" src="@Url.Content("~/images/strength/block2.jpg")"/>
+                <div class="description disp">
+                    <time>December 5, 2012 2:00 pm</time>
+                    <h4>公路建设项目</h4>
+                     <br />
+                    <p>与XX集团共同完成xx路段 土方等各种材料运输项目</p>
+
+                </div>
+                <a href="#"></a>
+            </div>
+
+            <div class="item half odd">
+                <img alt="大货件 集装箱" style="margin: 0 0;" src="@Url.Content("~/images/strength/block3.jpg")"/>
+                <div class="description hided">
+                    <time>December 5, 2012 1:55 pm</time>
+                    <h4>货柜长途运输</h4>
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh. Duis tincidunt... </p>
+
+                </div>
+                <a href="#"></a>
+            </div>
+
+        </div>
+        <div class="gr-box">
+            <div class="item half even">
+                <img alt="大货件 集装箱" style="margin: 0 0;" src="@Url.Content("~/images/strength/block4.jpg")"/>
+                <div class="description hided">
+                    <time>December 5, 2012 1:48 pm</time>
+                    <h4>The next-gen MacBook Pro with Retina Display Review</h4>
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh. Duis tincidunt... </p>
+
+                </div>
+                <a href="#"></a>
+            </div>
+
+            <div class="item half odd">
+                <img alt="大货件 集装箱" style="margin: 0 0;" src="@Url.Content("~/images/strength/block5.jpg")"/>
+                <div class="description hided">
+                    <time>December 5, 2012 11:27 am</time>
+                    <h4>Google Nexus 7 and Android 4.1 &ndash; Mini Review</h4>
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh. Duis tincidunt... </p>
+
+                </div>
+                <a href="#"></a>
+            </div>
+
+            <div class="item large 6 2 even">
+                <img alt="大货件 集装箱" style="margin: 0 0;" src="@Url.Content("~/images/strength/block6.jpg")"/>
+                <div class="description hided">
+                    <time>December 5, 2012 8:39 am</time>
+                    <h4>HTC One X great review from anandtech</h4>
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh. Duis tincidunt lectus quis dui viverra vestibulum. Suspendisse vulputate aliquam dui. Nulla elementum dui ut augue. Aliquam vehicula mi at mauris. Maecenas placerat, nisl at consequat rhoncus, sem nunc gravida justo, quis eleifend arcu velit quis lacus. Morbi magna magna, tincidunt a,... </p>
+
+                </div>
+                <a href="#"></a>
+            </div>
+
+        </div>
+    </div>
+
+</div>*@
+
+@model Cargo.App_DataClass.Strength
+
+<div class="wrap" style="padding-left:30px; padding-right:10px;">
+
+    <div class="grid">
+        <div class="gr-box">
+            <div class="item large 1 1 odd">
+                <img alt="@Model.BlockTitle_1" style="margin: 0 0;" src="@Url.Content(Model.BlockImage_1)" />
+                <div class="description disp">
+                    <time>@Model.BlockTime_1</time>
+                    <h4>@Model.BlockTitle_1</h4>
+                    <br />
+                    <p>@Model.BlockText_1 </p>
+
+                </div>
+      
+            </div>
+
+            <div class="item half even">
+                <img alt="@Model.BlockTitle_2" style="margin: 0 0;" src="@Url.Content(Model.BlockImage_2)"/>
+                <div class="description disp">
+                    <time>@Model.BlockTime_2</time>
+                    <h4>@Model.BlockTitle_2</h4>
+                     <br />
+                    <p>@Model.BlockText_2</p>
+
+                </div>
+           
+            </div>
+
+            <div class="item half odd">
+                <img alt="@Model.BlockTitle_3" style="margin: 0 0;" src="@Url.Content(Model.BlockImage_3)"/>
+                <div class="description hided">
+                    <time>@Model.BlockTime_3</time>
+                    <h4>@Model.BlockTitle_3</h4>
+
+                    <p>@Model.BlockText_3 </p>
+
+                </div>
+        
+            </div>
+
+        </div>
+        <div class="gr-box">
+            <div class="item half even">
+                <img alt="@Model.BlockTitle_4" style="margin: 0 0;" src="@Url.Content(Model.BlockImage_4)"/>
+                <div class="description hided">
+                    <time>@Model.BlockTime_4</time>
+                    <h4>@Model.BlockTitle_4</h4>
+
+                    <p>@Model.BlockText_4</p>
+
+                </div>
+        
+            </div>
+
+            <div class="item half odd">
+                <img alt="@Model.BlockTitle_5" style="margin: 0 0;" src="@Url.Content(Model.BlockImage_5)"/>
+                <div class="description hided">
+                    <time>@Model.BlockTime_5</time>
+                    <h4>@Model.BlockTitle_5</h4>
+
+                    <p>@Model.BlockText_5</p>
+
+                </div>
+        
+            </div>
+
+            <div class="item large 6 2 even">
+                <img alt="@Model.BlockTitle_6" style="margin: 0 0;" src="@Url.Content(Model.BlockImage_6)"/>
+                <div class="description hided">
+                    <time>@Model.BlockTime_6</time>
+                    <h4>@Model.BlockTitle_6</h4>
+
+                    <p>@Model.BlockText_6</p>
+
+                </div>
+ 
+            </div>
+
+        </div>
+    </div>
+
+</div>

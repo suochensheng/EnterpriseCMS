@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "HomeBlock2Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model Cargo.App_DataClass.HomeBloks2
+<div class="section-header">
+    <div class="title">
+        <img alt="" src="@Url.Content("~/Images/admin/ico-system.png")" />
+        Home Block 2
+    </div>
+</div>
+@using (Html.BeginForm("HomeBlock2EditSubmit", "HomeAdmin", new { Area = "Admin" }, FormMethod.Post))
+{
+
+   
+    <div class="label">TeamTitle</div>
+    @Html.TextBoxFor(e => e.TeamTitle)
+
+    <div class="clear"></div>
+
+    <div class="label">TeamDescription</div>
+    @Html.TextAreaFor(e => e.TeamDescription, new { rows="5" ,cols="50" })
+
+    <div class="clear"></div>
+
+    <div class="label">NewsTitle</div>
+    @Html.TextBoxFor(e => e.NewsTitle, new { @class = "" })
+
+     <div class="clear"></div>
+
+    <div class="label">NewsDescription</div>
+    @Html.TextAreaFor(e => e.NewsDescription, new { rows = "5", cols = "50" })
+
+    <div class="clear"></div>
+
+    <div class="label">WorkTitle</div>
+    @Html.TextBoxFor(e => e.WorkTitle, new { @class=""})
+
+    <div class="clear"></div>
+
+    <div class="label">WorkDescription</div>
+    @Html.TextAreaFor(e => e.WorkDescription, new { rows="5" ,cols="50" })
+
+    <p>
+        <input type="submit" class="adminButtonBlue" name="Submit" id="Submit" value="Submit" />
+    </p>   
+}
