@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: uat
+  devtools:
+    livereload:
+      enabled: true
+  application:
+    name: afc-contract-service
+
+appconfig:
+  proxy1:
+    host: httppxsait.srv.volvo.com
+    port: 8080
+    domain: rds
+    username: cs-ws-s-CN-E-Sign
+    password: eL9aJf-%7-L--HL
+  proxy2:
+    host: httppxgot.srv.volvo.com
+    port: 8080
+    domain: rds
+    username: cs-ws-s-CN-E-Sign
+    password: eL9aJf-%7-L--HL
+  proxy3:
+    host: httppxkr.srv.volvo.com
+    port: 8080
+    domain: rds
+    username: cs-ws-s-CN-E-Sign
+    password: eL9aJf-%7-L--HL
+
+logging:
+  file:
+    name: logs/afc-contract-service.json

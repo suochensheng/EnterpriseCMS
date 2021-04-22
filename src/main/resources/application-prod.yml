@@ -1,0 +1,35 @@
+server:
+  port: 8209
+
+eureka:         #tells about the Eureka server details and its refresh time
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8200/eureka/
+spring:
+  datasource:
+    url: jdbc:mysql://153.112.122.57:3306/csg_esign?useSSL=false&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+    username: root
+    password: Volvo123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+
+appconfig:
+  name: cms
+  pwd: csg
+
+bjcaconfig:
+  appid: 1
+  uncreditcode: 91110000635090679J
+  templateType: 2
+  templateId: 77276BDB953D44AF
+  personSignsType: 2
+  personSignsRole: 个人签
+  personSignsCardType: 1
+  enterpriseSignsType: 1
+  enterpriseSignsEnterpriseName: 沃尔沃汽车金融（中国）有限公司
+  enterpriseSignsRole: 甲方
+  businessType:
+  isuseproxy: true
+  keyword: 签名
+  interfaceurl: https://esign.vfsco.net.cn:443/ec-webservice/interface/keyWordSignSealServer
