@@ -24,7 +24,7 @@
         <jwt.version>0.9.0</jwt.version>
         <jaxb.version>2.3.0</jaxb.version>
         <jib-maven-plugin.version>2.7.0</jib-maven-plugin.version>
-        <mysql-connector.version>8.0.21</mysql-connector.version>
+        <mysql-connector.version>8.0.28</mysql-connector.version>
         <httpcomponents.version>4.5.13</httpcomponents.version>
     </properties>
     <dependencies>
